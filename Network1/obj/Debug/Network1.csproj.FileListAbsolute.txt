@@ -1,0 +1,15 @@
+D:\Вся херня\Study\Ебаный диплом\Network1\Network1\bin\Debug\Network1.exe.config
+D:\Вся херня\Study\Ебаный диплом\Network1\Network1\bin\Debug\Network1.exe
+D:\Вся херня\Study\Ебаный диплом\Network1\Network1\bin\Debug\Network1.pdb
+D:\Вся херня\Study\Ебаный диплом\Network1\Network1\bin\Debug\System.Data.SqlServerCe.dll
+D:\Вся херня\Study\Ебаный диплом\Network1\Network1\obj\Debug\Network1.csprojResolveAssemblyReference.cache
+D:\Вся херня\Study\Ебаный диплом\Network1\Network1\obj\Debug\MainWindow.g.cs
+D:\Вся херня\Study\Ебаный диплом\Network1\Network1\obj\Debug\App.g.cs
+D:\Вся херня\Study\Ебаный диплом\Network1\Network1\obj\Debug\Network1_MarkupCompile.cache
+D:\Вся херня\Study\Ебаный диплом\Network1\Network1\obj\Debug\Network1_MarkupCompile.lref
+D:\Вся херня\Study\Ебаный диплом\Network1\Network1\obj\Debug\MainWindow.baml
+D:\Вся херня\Study\Ебаный диплом\Network1\Network1\obj\Debug\Network1.g.resources
+D:\Вся херня\Study\Ебаный диплом\Network1\Network1\obj\Debug\Network1.Properties.Resources.resources
+D:\Вся херня\Study\Ебаный диплом\Network1\Network1\obj\Debug\Network1.csproj.GenerateResource.Cache
+D:\Вся херня\Study\Ебаный диплом\Network1\Network1\obj\Debug\Network1.exe
+D:\Вся херня\Study\Ебаный диплом\Network1\Network1\obj\Debug\Network1.pdb
