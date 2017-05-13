@@ -1,0 +1,22 @@
+﻿<Window x:Class="Network1.Start_Window"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Network1"
+        mc:Ignorable="d"
+        Title="Менеджер проектов" Height="300" Width="315.966" ResizeMode="NoResize" ShowInTaskbar="False" WindowStartupLocation="CenterScreen">
+    <Grid Margin="0,0,4,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="129*"/>
+            <ColumnDefinition Width="46*"/>
+            <ColumnDefinition Width="131*"/>
+        </Grid.ColumnDefinitions>
+        <Button Name="NEW_PRJ_Button" Content="Добавить" Grid.Column="2" HorizontalAlignment="Left" Margin="39,45,0,0" VerticalAlignment="Top" Width="75" Click="NEW_PRJ_Button_Click"/>
+        <ListBox Name="Projects_List" HorizontalAlignment="Left" Height="241" Margin="10,10,0,0" VerticalAlignment="Top" Width="188" Grid.ColumnSpan="3"/>
+        <Button Name="OPEN_PRJ_Button" Content="Открыть" Grid.Column="2" HorizontalAlignment="Left" Margin="39,10,0,0" VerticalAlignment="Top" Width="75" Click="OPEN_PRJ_Button_Click" />
+        <Button Name="DEL_PRJ_Button"  Content="Удалить" Grid.Column="2" HorizontalAlignment="Left" Margin="39,78,0,0" VerticalAlignment="Top" Width="75" Click="DEL_PRJ_Button_Click"/>
+        <Button Name="Update_PRJ_Button" Content="Обновить" Grid.Column="2" HorizontalAlignment="Left" Margin="39,113,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+
+    </Grid>
+</Window>

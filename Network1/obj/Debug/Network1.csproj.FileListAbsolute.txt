@@ -13,3 +13,7 @@ D:\Вся херня\Study\Ебаный диплом\Network1\Network1\obj\Debug
 D:\Вся херня\Study\Ебаный диплом\Network1\Network1\obj\Debug\Network1.csproj.GenerateResource.Cache
 D:\Вся херня\Study\Ебаный диплом\Network1\Network1\obj\Debug\Network1.exe
 D:\Вся херня\Study\Ебаный диплом\Network1\Network1\obj\Debug\Network1.pdb
+D:\Вся херня\Study\Ебаный диплом\Network1\Network1\obj\Debug\New_project_create.g.cs
+D:\Вся херня\Study\Ебаный диплом\Network1\Network1\obj\Debug\New_project_create.baml
+D:\Вся херня\Study\Ебаный диплом\Network1\Network1\obj\Debug\Start_Window.g.cs
+D:\Вся херня\Study\Ебаный диплом\Network1\Network1\obj\Debug\Start_Window.baml

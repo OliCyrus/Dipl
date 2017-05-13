@@ -5,9 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Network1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="350" Width="525" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
         <Button Content="Shit" HorizontalAlignment="Left" Margin="224,148,0,0" VerticalAlignment="Top" Width="75" AutomationProperties.Name="Button1" Click="Button_Click"/>
+        <Menu HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="519">
+            <MenuItem Header="Файл">
+                <MenuItem Header="Создать">
+                    <MenuItem Header="Новый проект" Name="New_Project" Click="New_Project_Click"/>
+                </MenuItem>
+            </MenuItem>
+        </Menu>
 
     </Grid>
 </Window>

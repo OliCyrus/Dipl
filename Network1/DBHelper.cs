@@ -18,7 +18,8 @@ namespace Network1
 
         public static void Create_Db_File(string fileName)
         {
-            ConnectionString = String.Format(@"Data Source=|DataDirectory|\{0};Persist Security Info=True", fileName);
+ 
+            ConnectionString = String.Format(@"Data Source=|DataDirectory|\Projects\{0};Persist Security Info=True", fileName);
             DbFile = fileName;
         }
 
@@ -47,7 +48,7 @@ namespace Network1
             {
                 if (conn != null)
                     conn.Close();
-                MessageBox.Show("База данных успешно создана!");
+                MessageBox.Show("Проект успешно создан!", "",MessageBoxButton.OK, MessageBoxImage.Information);
             }
         }
 

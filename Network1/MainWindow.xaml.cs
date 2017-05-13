@@ -41,5 +41,11 @@ namespace Network1
             if (!DBHelper.IsDbFileExist)
                 MessageBox.Show("pizdec!");
         }
+
+        private void New_Project_Click(object sender, RoutedEventArgs e)
+        {
+            New_project_create npj = new New_project_create();
+            npj.Show();
+        }
     }
 }
