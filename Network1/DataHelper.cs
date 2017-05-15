@@ -37,5 +37,17 @@ namespace Network1
                 lst.Items.Clear();
             }
         }
+
+        public static void open_project(ListBox lst)
+        {
+            while (lst.SelectedItems.Count > 0)
+            {
+                string fName = lst.SelectedItems[0].ToString();
+                DBHelper.Create_Db_File(fName);
+                break;
+            }
+            MainWindow mwn = new MainWindow();
+            mwn.Show();
+        }
     }
 }

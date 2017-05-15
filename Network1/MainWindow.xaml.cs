@@ -28,18 +28,7 @@ namespace Network1
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                DBHelper.Create_Db_File("1.sdf");
-                DBHelper.Create_DB();
-                
-            }
-            catch
-            {
-                MessageBox.Show("PIZDEC!");
-            }
-            if (!DBHelper.IsDbFileExist)
-                MessageBox.Show("pizdec!");
+            MessageBox.Show(DBHelper.DbFile.ToString());
         }
 
         private void New_Project_Click(object sender, RoutedEventArgs e)

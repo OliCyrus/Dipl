@@ -45,7 +45,7 @@ namespace Network1
 
         private void OPEN_PRJ_Button_Click(object sender, RoutedEventArgs e)
         {
-
+            DataHelper.open_project(Projects_List);
         }
     }
 }
