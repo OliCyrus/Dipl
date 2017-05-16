@@ -46,8 +46,6 @@ namespace Network1
                 DBHelper.Create_Db_File(fName);
                 break;
             }
-            MainWindow mwn = new MainWindow();
-            mwn.Show();
         }
     }
 }

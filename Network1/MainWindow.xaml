@@ -5,16 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Network1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
-    <Grid>
-        <Button Content="Shit" HorizontalAlignment="Left" Margin="224,148,0,0" VerticalAlignment="Top" Width="75" AutomationProperties.Name="Button1" Click="Button_Click"/>
-        <Menu HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="519">
+        Title="MainWindow" Height="363.725" Width="546.569" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid Margin="0,0,0,-18">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="303*"/>
+            <ColumnDefinition Width="238*"/>
+        </Grid.ColumnDefinitions>
+        <Menu HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="519" Grid.ColumnSpan="2">
             <MenuItem Header="Файл">
                 <MenuItem Header="Создать">
-                    <MenuItem Header="Новый проект" Name="New_Project" Click="New_Project_Click"/>
+                    <MenuItem Header="Новый проект" Name="New_Project"/>
                 </MenuItem>
             </MenuItem>
+            <MenuItem Name="Exit_Menu_Item" Click="Exit_Menu_Item_Click" Header="Выход"/>
         </Menu>
+        <DataGrid ItemsSource="{Binding}" Name="Tasks_View" HorizontalAlignment="Left" Height="195" Margin="22,30,0,0" VerticalAlignment="Top" Width="295" Grid.ColumnSpan="2"/>
+        <Button Click="Button_Click" Content="Button" HorizontalAlignment="Left" Margin="53,42,0,0" VerticalAlignment="Top" Width="75" Grid.Column="1"/>
+        <TextBox Name="Task_Name" HorizontalAlignment="Left" Height="23" Margin="22,238,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <Button  Name="Add_Task_Button" Content="Button" Click="Add_Task_Button_Click" HorizontalAlignment="Left" Margin="166,238,0,0" VerticalAlignment="Top" Width="75"/>
 
     </Grid>
 </Window>

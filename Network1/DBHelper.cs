@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 using System.Data.SqlServerCe;
 using System.Windows;
+using System.Windows.Controls;
 using System.IO;
 
 namespace Network1
@@ -38,7 +40,21 @@ namespace Network1
                 var cmd = conn.CreateCommand();
                 cmd.CommandText = "Create Table Employee(" +
                                   "ID int identity(1,1) not null primary key," +
-                                  "NAME nvarchar(100) not null)";
+                                  "Name nvarchar(100) not null)";
+                cmd.ExecuteNonQuery();
+
+                cmd.CommandText = "Create Table Tasks(" +
+                                  "ID int identity(1000,1) not null primary key," +
+                                  "Name nvarchar(100) not null)";
+                cmd.ExecuteNonQuery();
+
+                cmd.CommandText = "Create Table Assingment(" +
+                                  "ID int identity(10000,1) not null primary key," +
+                                  "ID_Task int not null," +
+                                  "foreign key(ID_Task) references Tasks(ID)," +
+                                  "ID_Employee int not null," +
+                                  "foreign key(ID_Employee) references Employee(ID))";
+                cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
@@ -60,6 +76,61 @@ namespace Network1
         public static bool IsDbFileExist
         {
             get { return File.Exists(DbFile); }
+        }
+
+        public static void FillData(string selectCommand, DataGrid data_grid)
+        {
+            try
+            {
+                using (var c = DBHelper.CreateConnection())
+                {
+                    c.Open();
+                    using (var a = new SqlCeDataAdapter(selectCommand, c))
+                    {
+                        var t = new DataTable();
+                        a.Fill(t);
+                        data_grid.ItemsSource = t.DefaultView;
+                    }
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Не удалось получить данные из базы данных.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        public static void add_task(TextBox txt)
+        {
+            if (txt.Text.Length != 0)
+            {
+                SqlCeConnection conn = null;
+
+                try
+                {
+                    conn = new SqlCeConnection(DBHelper.ConnectionString);
+
+                    conn.Open();
+
+                    SqlCeCommand command = conn.CreateCommand();
+                    command.CommandText = "INSERT INTO Tasks(Name) "
+                    + "VALUES(@Name)";
+                    command.Parameters.Add("@Name", SqlDbType.NVarChar, 100);
+                    command.Parameters["@Name"].Value = txt.Text;
+                    command.ExecuteScalar();
+                    command.Parameters.Clear();
+                }
+                catch
+                {
+                    MessageBox.Show("Данный объект уже существует!");
+                }
+                finally
+                {
+                    if (conn != null)
+                        conn.Close();
+                }
+            }
+            else
+                MessageBox.Show("Все поля должны быть заполнены!");
         }
     }
 }

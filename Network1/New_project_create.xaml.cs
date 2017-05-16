@@ -30,8 +30,8 @@ namespace Network1
         {
             try
             {
-                DBHelper.Create_Db_File(NPRJ_Textbox.Text + ".sdf");
-                DBHelper.Create_DB();
+                DBHelper.Create_Db_File(NPRJ_Textbox.Text + ".sdf");   //создание файла
+                DBHelper.Create_DB();     //создание файла бд
                 this.Close();
             }
             catch
@@ -43,6 +43,7 @@ namespace Network1
         private void Cancel_Button_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+            
         }
     }
 }
