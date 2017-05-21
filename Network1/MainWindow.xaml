@@ -5,24 +5,62 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Network1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="363.725" Width="546.569" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="MainWindow" Height="799.796" Width="1044.734" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid Margin="0,0,0,-18">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="303*"/>
-            <ColumnDefinition Width="238*"/>
+            <ColumnDefinition Width="674*"/>
+            <ColumnDefinition Width="109*"/>
+            <ColumnDefinition Width="256*"/>
         </Grid.ColumnDefinitions>
-        <Menu HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="519" Grid.ColumnSpan="2">
-            <MenuItem Header="Файл">
-                <MenuItem Header="Создать">
-                    <MenuItem Header="Новый проект" Name="New_Project"/>
-                </MenuItem>
-            </MenuItem>
+        <Menu HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="871" Grid.ColumnSpan="3">
+            <MenuItem Header="Файл"/>
             <MenuItem Name="Exit_Menu_Item" Click="Exit_Menu_Item_Click" Header="Выход"/>
         </Menu>
-        <DataGrid ItemsSource="{Binding}" Name="Tasks_View" HorizontalAlignment="Left" Height="195" Margin="22,30,0,0" VerticalAlignment="Top" Width="295" Grid.ColumnSpan="2"/>
-        <Button Click="Button_Click" Content="Button" HorizontalAlignment="Left" Margin="53,42,0,0" VerticalAlignment="Top" Width="75" Grid.Column="1"/>
-        <TextBox Name="Task_Name" HorizontalAlignment="Left" Height="23" Margin="22,238,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <Button  Name="Add_Task_Button" Content="Button" Click="Add_Task_Button_Click" HorizontalAlignment="Left" Margin="166,238,0,0" VerticalAlignment="Top" Width="75"/>
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="362" Margin="10,42,0,0" Stroke="Black" VerticalAlignment="Top" Width="656"/>
+        <Button  Name="Update_tasks_list_button" Click="Update_tasks_list_button_Click" Content="Обновить" HorizontalAlignment="Left" Margin="282,337,0,0" VerticalAlignment="Top" Width="76" Height="22"/>
+        <DataGrid IsReadOnly="True" ItemsSource="{Binding}" x:Name="Tasks_View" ColumnWidth="*" HorizontalAlignment="Left" Height="195" Margin="25,81,0,0" VerticalAlignment="Top" Width="628" SelectionChanged="Tasks_View_SelectionChanged"/>
+        <TextBox Name="Task_Name" HorizontalAlignment="Left" Height="23" Margin="66,297,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+        <Button  Name="Add_Task_Button" Content="Добавить" Click="Add_Task_Button_Click" HorizontalAlignment="Left" Margin="25,337,0,0" VerticalAlignment="Top" Width="75" Height="22"/>
+        <DatePicker Name="Start_date_picker" HorizontalAlignment="Left" Margin="282,297,0,0" VerticalAlignment="Top" Width="119" RenderTransformOrigin="0.512,0.954" Height="24" SelectedDateFormat="Short"/>
+        <Label Content="Задачи" HorizontalAlignment="Left" Margin="25,39,0,0" VerticalAlignment="Top" FontSize="20" Height="37" Width="75"/>
+        <Label Content="Имя:" HorizontalAlignment="Left" Margin="25,294,0,0" VerticalAlignment="Top" Height="26" Width="36"/>
+        <Label Content="Дата начала:" HorizontalAlignment="Left" Margin="197,294,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.489,0.218" Height="26" Width="80"/>
+        <Label Content="Дата окончания:" HorizontalAlignment="Left" Margin="419,294,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.489,0.218" Height="26" Width="101"/>
+        <DatePicker Name="Finish_date_picker" HorizontalAlignment="Left" Margin="525,297,0,0" VerticalAlignment="Top" Height="24" Width="119"/>
+        <Button Name="Delete_Task_Button" Content="Удалить" HorizontalAlignment="Left" Margin="197,337,0,0" VerticalAlignment="Top" Width="75" Click="Delete_Task_Button_Click" Height="22" RenderTransformOrigin="0.12,0.591"/>
+        <Button Name="Update_Task_Button" Content="Изменить" HorizontalAlignment="Left" Margin="111,337,0,0" VerticalAlignment="Top" Width="75" Click="Update_Task_Button_Click" Height="22" />
+        <TabControl Name="Data_Tab_Control" HorizontalAlignment="Left" Height="200" Margin="10,449,0,0" VerticalAlignment="Top" Width="656" SelectionChanged="Data_Tab_Control_SelectionChanged">
+            <TabItem Header="Назначения">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="125*"/>
+                        <ColumnDefinition Width="8*"/>
+                        <ColumnDefinition Width="513*"/>
+                    </Grid.ColumnDefinitions>
+                    <DataGrid Name="Assingment_View" IsReadOnly="True" ItemsSource="{Binding}" ColumnWidth="*" HorizontalAlignment="Left" Height="133" VerticalAlignment="Top" Width="646" Grid.ColumnSpan="3" SelectionChanged="Assingment_View_SelectionChanged"/>
+                    <ComboBox Name="Tasks_Combo_Box" HorizontalAlignment="Left" Margin="66,142,0,0" VerticalAlignment="Top" Width="243" Grid.ColumnSpan="3" DropDownOpened="Tasks_Combo_Box_DropDownOpened"/>
+                    <Label Content="Задача:" HorizontalAlignment="Left" Margin="10,138,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Сотрудник:" Grid.Column="2" HorizontalAlignment="Left" Margin="192,138,0,0" VerticalAlignment="Top"/>
+                    <ComboBox Name="Empl_Combo_Box" HorizontalAlignment="Left" Margin="268,142,0,0" VerticalAlignment="Top" Width="235" Grid.Column="2" DropDownOpened="Empl_Combo_Box_DropDownOpened"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Сотрудники">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="25*"/>
+                        <ColumnDefinition Width="298*"/>
+                    </Grid.ColumnDefinitions>
+                    <DataGrid IsReadOnly="True" ItemsSource="{Binding}" Name="Employee_View" ColumnWidth="*" HorizontalAlignment="Left" Height="133" VerticalAlignment="Top" Width="646" Grid.ColumnSpan="2" SelectionChanged="Employee_View_SelectionChanged"/>
+                    <Label Content="ФИО:" HorizontalAlignment="Left" Margin="10,138,0,0" VerticalAlignment="Top"/>
+                    <TextBox Name="Employee_Name_Textbox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,140,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="289"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <Button Name="Add_Button" Content="Добавить" Click="Add_Button_Click" HorizontalAlignment="Left" Margin="25,664,0,0" VerticalAlignment="Top" Width="75" Height="22"/>
+        <Button Name="Update_button" Content="Изменить" Click="Update_button_Click" HorizontalAlignment="Left" Margin="111,664,0,0" VerticalAlignment="Top" Width="75" Height="22"/>
+        <Button Name="Delete_button" Content="Удалить" Click="Delete_button_Click" HorizontalAlignment="Left" Margin="197,664,0,0" VerticalAlignment="Top" Width="75" Height="22"/>
+        <Button Name="Update_list_button" Content="Обновить" Click="Update_list_button_Click" HorizontalAlignment="Left" Margin="282,664,0,0" VerticalAlignment="Top" Width="75" Height="22"/>
+
 
     </Grid>
 </Window>
